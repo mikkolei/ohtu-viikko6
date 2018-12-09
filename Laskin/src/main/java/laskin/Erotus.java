@@ -43,6 +43,12 @@ public class Erotus implements Komento {
         int laskunTulos = sovellus.tulos();
         tuloskentta.setText(laskunTulos+"");
         syotekentta.setText("");
+        
+        if (laskunTulos == 0) {
+            nollaa.disableProperty().set(true);
+        } else {
+            nollaa.disableProperty().set(false);
+        }
         undo.disableProperty().set(true);
     }
     

@@ -24,6 +24,7 @@ public class Nollaa implements Komento {
     @Override
     public void suorita() {
         lueSyote();
+        arvo = sovellus.tulos();
         sovellus.nollaa();
         tuloskentta.setText(0+"");
         syotekentta.setText("");
@@ -39,6 +40,12 @@ public class Nollaa implements Komento {
     @Override
     public void peru() {
         tuloskentta.setText(arvo+"");
+        
+        if (sovellus.tulos() == 0) {
+            nollaa.disableProperty().set(true);
+        } else {
+            nollaa.disableProperty().set(false);
+        }
         undo.disableProperty().set(true);
     }
     
